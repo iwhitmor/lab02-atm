@@ -16,7 +16,7 @@ namespace lab02_atm.tests
             decimal balance = bank.GetBalance();
 
             //Assert
-            Assert.Equal(1, balance);
+            Assert.Equal(0, balance);
         }
     }
 }

@@ -22,7 +22,7 @@ namespace lab02_atm
 
         public void WithdrawFromBalance(decimal amountToWithdraw)
         {
-            if (amountToWithdraw > balance)
+            if ((amountToWithdraw > balance) || (amountToWithdraw < 0))
             {
                 throw new ArgumentOutOfRangeException();
             }

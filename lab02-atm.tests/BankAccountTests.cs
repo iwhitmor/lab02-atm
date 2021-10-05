@@ -68,7 +68,7 @@ namespace lab02_atm.tests
         }
 
         [Fact]
-        public void Withdraw_Throws_If_Money_Not_Available()
+        public void Withdraw_Throws_If_Money_No_Available()
         {
 
             //Arrange
@@ -80,6 +80,20 @@ namespace lab02_atm.tests
             {
                 //Act
                 bank.WithdrawFromBalance(25);
+            });
+        }
+
+        [Fact]
+        public void Withdraw_Throws_For_Negative_Amount()
+        {
+            //Arrange
+            BankAccount bank = new BankAccount();
+
+            //Assert
+            Assert.Throws<ArgumentOutOfRangeException>(() =>
+            {
+                //Act
+                bank.WithdrawFromBalance(-1);
             });
         }
      

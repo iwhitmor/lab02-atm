@@ -49,5 +49,39 @@ namespace lab02_atm.tests
             decimal balance = bank.GetBalance();
             Assert.Equal(5, balance);
         }
+
+        [Fact]
+        public void Deposit_Throws_For_Negative_Amount()
+        {
+
+            //Arrange
+            BankAccount bank = new BankAccount();
+
+            //Assert
+            Assert.Throws<ArgumentOutOfRangeException>(() =>
+            {
+
+                //Act
+                bank.AddToBalance(-20);
+
+            });
+        }
+
+        [Fact]
+        public void Withdraw_Throws_If_Money_Not_Available()
+        {
+
+            //Arrange
+            BankAccount bank = new BankAccount();
+            bank.AddToBalance(20);
+
+            //Assert
+            Assert.Throws<ArgumentOutOfRangeException>(() =>
+            {
+                //Act
+                bank.WithdrawFromBalance(25);
+            });
+        }
+     
     }
 }

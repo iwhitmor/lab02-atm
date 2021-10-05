@@ -12,12 +12,22 @@ namespace lab02_atm
 
         public void AddToBalance(decimal amountToDeposit)
         {
-            balance += amountToDeposit;
+            if (amountToDeposit < 0)
+            {
+                throw new ArgumentOutOfRangeException();
+            }
+
+            else balance += amountToDeposit;
         }
 
         public void WithdrawFromBalance(decimal amountToWithdraw)
         {
-            balance -= amountToWithdraw;
+            if (amountToWithdraw > balance)
+            {
+                throw new ArgumentOutOfRangeException();
+            }
+
+            else balance -= amountToWithdraw;
         }
     }
 }

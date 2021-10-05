@@ -9,5 +9,15 @@ namespace lab02_atm
         {
             return balance;
         }
+
+        public void AddToBalance(decimal amountToDeposit)
+        {
+            balance += amountToDeposit;
+        }
+
+        public void WithdrawFromBalance(decimal amountToWithdraw)
+        {
+            balance -= amountToWithdraw;
+        }
     }
 }

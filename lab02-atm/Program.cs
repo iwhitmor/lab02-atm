@@ -45,6 +45,8 @@ namespace lab02_atm
             Console.WriteLine("2. Withdraw money from your account");
             Console.WriteLine("3. Check your balance");
             Console.WriteLine("4. Exit");
+
+            Console.Write("Action: ");
             string input = Console.ReadLine();
 
             int userInput = Convert.ToInt32(input);
@@ -55,21 +57,25 @@ namespace lab02_atm
         static void PromptAndDeposit()
         {
             Console.WriteLine("How much money would you like to deposit today?");
+            Console.Write("Deposit Amount: ");
             string input = Console.ReadLine();
             decimal userInput = Convert.ToDecimal(input);
             account.AddToBalance(userInput);
             decimal balance = account.GetBalance();
+            Console.WriteLine($"Deposit successful: {userInput}");
             Console.WriteLine($"You now have a balance of ${balance}");
         }
 
         static void PromptAndWithdraw()
         {
             Console.WriteLine("How much money would you like to withdraw today?");
+            Console.Write("Withdraw Amount: ");
             string input = Console.ReadLine();
             decimal userInput = Convert.ToDecimal(input);
             account.WithdrawFromBalance(userInput);
 
             decimal balance = account.GetBalance();
+            Console.WriteLine($"Withdraw successful: {userInput}");
             Console.WriteLine($"You now have a balance of ${balance}");
         }
 

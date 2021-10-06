@@ -10,6 +10,7 @@ namespace lab02_atm
         {
 
             WriteWelcome();
+            PromptForAction();
         }
 
         static void WriteWelcome()
@@ -24,17 +25,17 @@ namespace lab02_atm
 
         static void PromptAndDeposit()
         {
-
+            Console.WriteLine("How much money would you like to deposit today?");
         }
 
         static void PromptAndWithdraw()
         {
-
+            Console.WriteLine("How much money would you like to withdraw today?");
         }
 
         static void ViewBalance()
         {
-
+            Console.WriteLine("Here is your current balance: ");
         }
     }
 }

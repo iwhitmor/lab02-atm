@@ -74,7 +74,8 @@ namespace lab02_atm
 
         static void ViewBalance()
         {
-            Console.WriteLine("Here is your current balance: ");
+            decimal balance = account.GetBalance();
+            Console.WriteLine($"Here is your current balance: ${balance}");
         }
         static void Exit()
         {

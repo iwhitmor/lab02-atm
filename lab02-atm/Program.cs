@@ -34,7 +34,7 @@ namespace lab02_atm
 
         static void WriteWelcome()
         {
-            Console.WriteLine("Welcome to Your Trusted Bank");
+            Console.WriteLine("Welcome to Your Most Trusted Bank");
             Console.WriteLine();
         }
 
@@ -59,7 +59,7 @@ namespace lab02_atm
             decimal userInput = Convert.ToDecimal(input);
             account.AddToBalance(userInput);
             decimal balance = account.GetBalance();
-            Console.WriteLine($"You now have a balance of {balance}");
+            Console.WriteLine($"You now have a balance of ${balance}");
         }
 
         static void PromptAndWithdraw()
@@ -68,8 +68,9 @@ namespace lab02_atm
             string input = Console.ReadLine();
             decimal userInput = Convert.ToDecimal(input);
             account.WithdrawFromBalance(userInput);
+
             decimal balance = account.GetBalance();
-            Console.WriteLine($"You now have a balance of {balance}");
+            Console.WriteLine($"You now have a balance of ${balance}");
         }
 
         static void ViewBalance()
@@ -80,6 +81,7 @@ namespace lab02_atm
         static void Exit()
         {
             Console.WriteLine("Thank you, and have a great day!");
+            Environment.Exit(0);
         }
     }
 }

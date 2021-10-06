@@ -6,4 +6,9 @@
     <RootNamespace>lab02_atm</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Update="transaction-log.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
 </Project>

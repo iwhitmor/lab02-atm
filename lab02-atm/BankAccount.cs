@@ -41,5 +41,17 @@ namespace lab02_atm
             string logMessage = $"{DateTime.Today:yyyy-MM-dd}: {amount}";
             File.AppendAllText("transaction-log.txt", logMessage);
         }
+
+        public string[] GetLog()
+        {
+            string[] transactions = File.ReadAllLines("transaction-log.txt");
+
+            return transactions;
+        }
+
+        public void ClearLog()
+        {
+            File.WriteAllText("transaciton-log.txt", "");
+        }
     }
 }

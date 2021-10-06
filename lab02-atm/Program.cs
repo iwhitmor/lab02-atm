@@ -8,28 +8,36 @@ namespace lab02_atm
 
         static void Main(string[] args)
         {
-
             WriteWelcome();
 
-            int action = PromptForAction();
+            int[] array = new int[4];
 
-            if (action == 1)
+            for (int i = 0; i < array.Length; i++)
             {
-                PromptAndDeposit();
+
+                int action = PromptForAction();
+
+                if (action == 1)
+                {
+                    PromptAndDeposit();
+                }
+                else if (action == 2)
+                {
+                    PromptAndWithdraw();
+                }
+                else if (action == 3)
+                {
+                    ViewBalance();
+                }
+                else if (action == 4)
+                {
+                    return;
+                }
+                else
+                {
+                    Console.WriteLine("Please enter a number 1-4");
+                }
             }
-            else if (action == 2)
-            {
-                PromptAndWithdraw();
-            }
-            else if (action == 3)
-            {
-                ViewBalance();
-            }
-            else if (action == 4)
-            {
-                Exit();
-            }
-           
         }
 
         static void WriteWelcome()
@@ -40,18 +48,29 @@ namespace lab02_atm
 
         static int PromptForAction()
         {
-            Console.WriteLine("What would you like to do today (1/2/3/4)?");
-            Console.WriteLine("1. Deposit money to your account");
-            Console.WriteLine("2. Withdraw money from your account");
-            Console.WriteLine("3. Check your balance");
-            Console.WriteLine("4. Exit");
+            try
+            {
+                Console.WriteLine("What would you like to do today (1/2/3/4)?");
+                Console.WriteLine("1. Deposit money to your account");
+                Console.WriteLine("2. Withdraw money from your account");
+                Console.WriteLine("3. Check your balance");
+                Console.WriteLine("4. Exit");
 
-            Console.Write("Action: ");
-            string input = Console.ReadLine();
+                Console.Write("Your Choice: ");
+                string input = Console.ReadLine();
 
-            int userInput = Convert.ToInt32(input);
+                int userInput = Convert.ToInt32(input);
 
-            return userInput;
+                return userInput;
+            }
+
+            catch (FormatException)
+            {
+                Console.WriteLine("You must enter a number");
+
+                return 0;
+            }
+            
         }
 
         static void PromptAndDeposit()
@@ -83,11 +102,6 @@ namespace lab02_atm
         {
             decimal balance = account.GetBalance();
             Console.WriteLine($"Here is your current balance: ${balance}");
-        }
-        static void Exit()
-        {
-            Console.WriteLine("Thank you, and have a great day!");
-            Environment.Exit(0);
         }
     }
 }

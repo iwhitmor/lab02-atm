@@ -4,8 +4,11 @@ namespace lab02_atm
 {
     class Program
     {
+        private static readonly BankAccount account = new BankAccount();
+
         static void Main(string[] args)
         {
+
             WriteWelcome();
         }
 

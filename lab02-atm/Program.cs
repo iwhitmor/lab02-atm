@@ -17,7 +17,22 @@ namespace lab02_atm
             Console.WriteLine("Welcome to Your Trusted Bank");
         }
 
-        static void PromptForAction()
+        static int PromptForAction()
+        {
+            return 1;
+        }
+
+        static void PromptAndDeposit()
+        {
+
+        }
+
+        static void PromptAndWithdraw()
+        {
+
+        }
+
+        static void ViewBalance()
         {
 
         }

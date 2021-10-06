@@ -19,7 +19,7 @@ namespace lab02_atm.tests
             Assert.Equal(0, balance);
         }
 
-        [Fact]
+        [Fact] 
         public void Add_Money_To_Balance()
         {
 

@@ -16,5 +16,10 @@ namespace lab02_atm
         {
             Console.WriteLine("Welcome to Your Trusted Bank");
         }
+
+        static void PromptForAction()
+        {
+
+        }
     }
 }

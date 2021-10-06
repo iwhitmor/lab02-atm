@@ -8,6 +8,8 @@ namespace lab02_atm
 
         static void Main(string[] args)
         {
+            account.ClearLog();
+
             WriteWelcome();
 
             int[] array = new int[4];
@@ -31,11 +33,15 @@ namespace lab02_atm
                 }
                 else if (action == 4)
                 {
+                    DisplayTransactionLog();
+                }
+                else if (action == 5)
+                {
                     return;
                 }
                 else
                 {
-                    Console.WriteLine("Please enter a number 1-4");
+                    Console.WriteLine("Please enter a number 1-5");
                 }
             }
         }
@@ -54,7 +60,9 @@ namespace lab02_atm
                 Console.WriteLine("1. Deposit money to your account");
                 Console.WriteLine("2. Withdraw money from your account");
                 Console.WriteLine("3. Check your balance");
-                Console.WriteLine("4. Exit");
+                Console.WriteLine("4. Check your transaction log");
+                Console.WriteLine("5. Exit");
+                
 
                 Console.Write("Your Choice: ");
                 string input = Console.ReadLine();
@@ -121,6 +129,16 @@ namespace lab02_atm
         {
             decimal balance = account.GetBalance();
             Console.WriteLine($"Here is your current balance: ${balance}");
+        }
+
+        static void DisplayTransactionLog()
+        {
+            string[] transactionLog = account.GetLog();
+            for (int i = 0; i < transactionLog.Length; i++)
+            {
+                Console.WriteLine(transactionLog[i]);
+
+            }
         }
     }
 }

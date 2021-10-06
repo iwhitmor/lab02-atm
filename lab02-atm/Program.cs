@@ -25,6 +25,10 @@ namespace lab02_atm
             {
                 ViewBalance();
             }
+            else if (action == 4)
+            {
+                Exit();
+            }
            
         }
 
@@ -36,6 +40,10 @@ namespace lab02_atm
         static int PromptForAction()
         {
             Console.WriteLine("What would you like to do today (1/2/3/4)?");
+            Console.WriteLine("1. Deposit money to your account");
+            Console.WriteLine("2. Withdraw money from your account");
+            Console.WriteLine("3. Check your balance");
+            Console.WriteLine("4. Exit");
             string input = Console.ReadLine();
 
             int userInput = Convert.ToInt32(input);
@@ -56,6 +64,10 @@ namespace lab02_atm
         static void ViewBalance()
         {
             Console.WriteLine("Here is your current balance: ");
+        }
+        static void Exit()
+        {
+            
         }
     }
 }

@@ -67,7 +67,7 @@ namespace lab02_atm
         }
         static void Exit()
         {
-            
+            Console.WriteLine("Thank you, and have a great day!");
         }
     }
 }

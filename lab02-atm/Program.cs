@@ -69,22 +69,30 @@ namespace lab02_atm
                 Console.WriteLine("You must enter a number");
 
                 return 0;
-            }
-            
+            }   
         }
 
         static void PromptAndDeposit()
         {
-            Console.WriteLine("How much money would you like to deposit today?");
-            Console.Write("Deposit Amount: ");
-            string input = Console.ReadLine();
-            decimal userInput = Convert.ToDecimal(input);
-            account.AddToBalance(userInput);
-            decimal balance = account.GetBalance();
-            Console.WriteLine($"Deposit successful: {userInput}");
-            Console.WriteLine($"You now have a balance of ${balance}");
-        }
+            try
+            {
+                Console.WriteLine("How much money would you like to deposit today?");
+                Console.Write("Deposit Amount: ");
 
+                string input = Console.ReadLine();
+                decimal userInput = Convert.ToDecimal(input);
+
+                account.AddToBalance(userInput);
+
+                decimal balance = account.GetBalance();
+                Console.WriteLine($"Deposit successful: {userInput}");
+                Console.WriteLine($"You now have a balance of ${balance}");
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                Console.WriteLine("Your deposit amount was a negative number, please try again");
+            }
+        }
         static void PromptAndWithdraw()
         {
             Console.WriteLine("How much money would you like to withdraw today?");

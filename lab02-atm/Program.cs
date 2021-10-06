@@ -12,10 +12,20 @@ namespace lab02_atm
             WriteWelcome();
 
             int action = PromptForAction();
+
             if (action == 1)
             {
                 PromptAndDeposit();
             }
+            else if (action == 2)
+            {
+                PromptAndWithdraw();
+            }
+            else if (action == 3)
+            {
+                ViewBalance();
+            }
+           
         }
 
         static void WriteWelcome()
@@ -25,7 +35,7 @@ namespace lab02_atm
 
         static int PromptForAction()
         {
-            Console.WriteLine("What woudl you like to do today (1/2/3/4)?");
+            Console.WriteLine("What would you like to do today (1/2/3/4)?");
             string input = Console.ReadLine();
 
             int userInput = Convert.ToInt32(input);

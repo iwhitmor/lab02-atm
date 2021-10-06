@@ -10,7 +10,12 @@ namespace lab02_atm
         {
 
             WriteWelcome();
-            PromptForAction();
+
+            int action = PromptForAction();
+            if (action == 1)
+            {
+                PromptAndDeposit();
+            }
         }
 
         static void WriteWelcome()
@@ -20,7 +25,12 @@ namespace lab02_atm
 
         static int PromptForAction()
         {
-            return 1;
+            Console.WriteLine("What woudl you like to do today (1/2/3/4)?");
+            string input = Console.ReadLine();
+
+            int userInput = Convert.ToInt32(input);
+
+            return userInput;
         }
 
         static void PromptAndDeposit()

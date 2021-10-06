@@ -57,12 +57,19 @@ namespace lab02_atm
             Console.WriteLine("How much money would you like to deposit today?");
             string input = Console.ReadLine();
             decimal userInput = Convert.ToDecimal(input);
-
+            account.AddToBalance(userInput);
+            decimal balance = account.GetBalance();
+            Console.WriteLine($"You now have a balance of {balance}");
         }
 
         static void PromptAndWithdraw()
         {
             Console.WriteLine("How much money would you like to withdraw today?");
+            string input = Console.ReadLine();
+            decimal userInput = Convert.ToDecimal(input);
+            account.WithdrawFromBalance(userInput);
+            decimal balance = account.GetBalance();
+            Console.WriteLine($"You now have a balance of {balance}");
         }
 
         static void ViewBalance()

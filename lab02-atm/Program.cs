@@ -66,7 +66,7 @@ namespace lab02_atm
 
             catch (FormatException)
             {
-                Console.WriteLine("You must enter a number");
+                Console.WriteLine("You must enter a number. Please try again.");
 
                 return 0;
             }   
@@ -90,7 +90,7 @@ namespace lab02_atm
             }
             catch (ArgumentOutOfRangeException)
             {
-                Console.WriteLine("Your deposit amount was a negative number, please try again");
+                Console.WriteLine("Your deposit amount was a negative number, please try again.");
             }
         }
 
@@ -100,8 +100,10 @@ namespace lab02_atm
             {
                 Console.WriteLine("How much money would you like to withdraw today?");
                 Console.Write("Withdraw Amount: ");
+
                 string input = Console.ReadLine();
                 decimal userInput = Convert.ToDecimal(input);
+
                 account.WithdrawFromBalance(userInput);
 
                 decimal balance = account.GetBalance();
@@ -111,7 +113,7 @@ namespace lab02_atm
 
             catch (ArgumentOutOfRangeException)
             {
-                Console.WriteLine("You entered a negative number or did not have enough money in your account, please try again");
+                Console.WriteLine("You entered a negative number or did not have enough money in your account, please try again.");
             }
         }
 

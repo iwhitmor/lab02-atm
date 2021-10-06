@@ -35,6 +35,7 @@ namespace lab02_atm
         static void WriteWelcome()
         {
             Console.WriteLine("Welcome to Your Trusted Bank");
+            Console.WriteLine();
         }
 
         static int PromptForAction()
@@ -54,6 +55,9 @@ namespace lab02_atm
         static void PromptAndDeposit()
         {
             Console.WriteLine("How much money would you like to deposit today?");
+            string input = Console.ReadLine();
+            decimal userInput = Convert.ToDecimal(input);
+
         }
 
         static void PromptAndWithdraw()

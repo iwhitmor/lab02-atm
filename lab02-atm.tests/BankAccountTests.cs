@@ -59,8 +59,7 @@ namespace lab02_atm.tests
 
             //Assert
             Assert.Throws<ArgumentOutOfRangeException>(() =>
-            {
-
+            { 
                 //Act
                 bank.AddToBalance(-20);
 
@@ -88,6 +87,7 @@ namespace lab02_atm.tests
         {
             //Arrange
             BankAccount bank = new BankAccount();
+            bank.AddToBalance(20);
 
             //Assert
             Assert.Throws<ArgumentOutOfRangeException>(() =>

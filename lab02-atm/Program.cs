@@ -6,7 +6,12 @@ namespace lab02_atm
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            WriteWelcome();
+        }
+
+        static void WriteWelcome()
+        {
+            Console.WriteLine("Welcome to Your Trusted Bank");
         }
     }
 }

@@ -12,9 +12,7 @@ namespace lab02_atm
 
             WriteWelcome();
 
-            int[] array = new int[4];
-
-            for (int i = 0; i < array.Length; i++)
+            while (true)
             {
 
                 int action = PromptForAction();

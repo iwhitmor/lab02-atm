@@ -38,7 +38,7 @@ namespace lab02_atm
 
         private static void WriteToLog(decimal amount)
         {
-            string logMessage = $"{DateTime.Today:yyyy-MM-dd}: {amount}";
+            string logMessage = $"{DateTime.Today:yyyy-MM-dd}: {amount}\n";
             File.AppendAllText("transaction-log.txt", logMessage);
         }
 
